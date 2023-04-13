@@ -4,7 +4,7 @@ const cors = require('cors')
 
 const bodyParser = require('body-parser')
 
-const listaAlunos = require('./modulo.js')
+const listaAlunos = require('./metodos/module/modulo.js')
 
 
 const app = express()

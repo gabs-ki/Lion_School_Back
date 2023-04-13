@@ -1,8 +1,8 @@
-var listaTurma = require('../alunos.js')
+var listaTurma = require('../json/alunos.js')
 
-var listaCursos = require('../cursos')
+var listaCursos = require('../json/cursos.js')
 
-var listaAlunos = require('../alunos.js')
+var listaAlunos = require('../json/alunos.js')
 
 const listaCurso = listaCursos.cursos
 
