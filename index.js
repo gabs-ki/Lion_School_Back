@@ -4,8 +4,11 @@ const cors = require('cors')
 
 const bodyParser = require('body-parser')
 
-const listaAlunos = require('./metodos/module/modulo.js')
+const listaCursos = require('./metodos/module/modulo.js')
 
+const listaMatriculas = require('./metodos/module/modulo.js')
+
+const listaAlunos = require('./metodos/module/modulo.js')
 
 const app = express()
 
@@ -24,7 +27,7 @@ app.use((request, response, next) => {
 
 app.get('/v1/lion-school/cursos', cors(), async function (request, response, next) {
 
-    let cursos = listaAlunos.getListaCursos()
+    let cursos = listaCursos.getListaCursos()
 
     if(cursos) {
        
@@ -101,7 +104,7 @@ app.get('/v1/lion-school/alunos/:matricula', cors(), async function (request, re
             statusCode = 400
             dadosAluno.message = 'Não foi possível acessar pois os dados de entrada (matricula) não corresponde ao exigido, confira o valor, pois não pode ser vazio e precisar ser a caracteres'
         }else{
-            let aluno = listaAlunos.getMatricula(matriculaAluno)
+            let aluno = listaMatriculas.getMatricula(matriculaAluno)
 
             if(aluno){
                 statusCode = 200
